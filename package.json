@@ -1,0 +1,24 @@
+{
+  "name": "accessbridge-ai",
+  "version": "1.0.0",
+  "description": "AccessBridge AI - One digital bridge. Every way to understand.",
+  "type": "module",
+  "scripts": {
+    "dev": "node dev.js",
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "start": "node server/server.js"
+  },
+  "keywords": [
+    "accessibility",
+    "ai",
+    "gemini",
+    "wcag",
+    "inclusion",
+    "easy-read",
+    "assistive-tech"
+  ],
+  "author": "AccessBridge Team",
+  "license": "MIT"
+}

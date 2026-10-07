@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --border-color: #e2e8f0;
+    --focus-ring: #0284c7;
+    --accent: #0284c7;
+    --accent-contrast: #ffffff;
+  }
+
+  /* High Contrast Dark (WCAG AAA 7:1+) */
+  .theme-high-contrast-dark {
+    --bg-main: #000000;
+    --card-bg: #121212;
+    --text-primary: #ffffff;
+    --text-secondary: #e2e8f0;
+    --border-color: #ffffff;
+    --focus-ring: #ffff00;
+    --accent: #ffff00;
+    --accent-contrast: #000000;
+  }
+
+  /* High Contrast Light (WCAG AAA) */
+  .theme-high-contrast-light {
+    --bg-main: #ffffff;
+    --card-bg: #f8fafc;
+    --text-primary: #000000;
+    --text-secondary: #1e293b;
+    --border-color: #000000;
+    --focus-ring: #000000;
+    --accent: #000000;
+    --accent-contrast: #ffffff;
+  }
+
+  /* Soft Warm / Dyslexia Friendly Theme */
+  .theme-soft-warm {
+    --bg-main: #fcf6e8;
+    --card-bg: #f6ecdb;
+    --text-primary: #2d261e;
+    --text-secondary: #4d4439;
+    --border-color: #d8c8ae;
+    --focus-ring: #855318;
+    --accent: #855318;
+    --accent-contrast: #ffffff;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+  }
+
+  /* Universal Visible Focus Indicators */
+  *:focus-visible {
+    outline: 3px solid var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+}
+
+/* Dynamic Font Sizing Classes */
+.text-size-small {
+  font-size: 0.95rem;
+}
+.text-size-medium {
+  font-size: 1.05rem;
+}
+.text-size-large {
+  font-size: 1.25rem;
+}
+.text-size-xlarge {
+  font-size: 1.45rem;
+}
+
+/* Dynamic Line Height Classes */
+.spacing-normal {
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+.spacing-relaxed {
+  line-height: 1.9;
+  letter-spacing: 0.025em;
+  word-spacing: 0.05em;
+}
+.spacing-loose {
+  line-height: 2.2;
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+}
+
+/* Dyslexia Friendly Typography Mode */
+.font-mode-dyslexic {
+  font-family: 'Atkinson Hyperlegible', 'Comic Sans MS', sans-serif !important;
+  letter-spacing: 0.04em;
+  word-spacing: 0.08em;
+}
+
+.font-mode-sans {
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+.font-mode-serif {
+  font-family: Georgia, Cambria, 'Times New Roman', serif !important;
+}
+
+/* Reading Ruler Overlay */
+.reading-ruler {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background-color: rgba(255, 235, 59, 0.22);
+  border-top: 2px solid rgba(234, 179, 8, 0.8);
+  border-bottom: 2px solid rgba(234, 179, 8, 0.8);
+  pointer-events: none;
+  z-index: 9999;
+  transition: top 0.05s ease-out;
+}
+
+/* High Contrast Highlighting */
+.theme-high-contrast-dark a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.theme-high-contrast-dark button {
+  border-color: currentColor;
+}
+
+/* Reduced Motion Mode */
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
